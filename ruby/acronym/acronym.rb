@@ -8,9 +8,9 @@ To get started with TDD, see the `README.md` file in your
 
 class Acronym 
 
+
   def self.abbreviate(sentence)
-    no_punctuation = sentence.gsub(/\W+/, ' ')
-    no_punctuation.split(" ").map { |word| word.capitalize[0]}.join
+    sentence.scan(/\b[a-zA-Z]/).join.upcase
   end
 
 end
