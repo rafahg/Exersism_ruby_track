@@ -6,3 +6,32 @@ To get started with TDD, see the `README.md` file in your
 `ruby/high-scores` directory.
 =end
 
+class HighScores 
+
+  attr_reader :scores
+
+  def initialize(scores)
+    @scores = scores
+  end
+
+  def scores 
+    @scores
+  end
+
+  def latest
+    @scores.last
+  end
+
+  def personal_best
+    @scores.sort.last
+  end
+
+  def personal_top_three
+    @scores.max(3)
+  end
+
+  def latest_is_personal_best?
+    @scores.max == @scores[-1] ? true : false
+  end
+
+end
